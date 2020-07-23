@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}SPINGE | Inicio{% endblock titulo%}
+{% block titulo_2 %}Inicio{% endblock titulo_2 %}
+{% block subtitulo %} Información {% endblock subtitulo %}
+
+{% block Contenido %}
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<div class="card-title">Información</div>
+			</div>
+			<div class="card-body">
+				
+				<ul class="nav nav-pills nav-info" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Centro de Salud</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Acerca del Sistema</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contacto</a>
+					</li>
+				</ul>
+				<hr>
+				<div class="tab-content mt-2 mb-3" id="pills-tabContent">
+					<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+						<p>Ecuador es un país que se extiende por el ecuador en la costa oeste de Sudamérica. Sus diversos paisajes abarcan la selva del Amazonas, las zonas altas andinas y las islas Galápagos de abundante fauna. En las laderas de los Andes, a una elevación de 2,850 m, Quito, su capital, es famosa por su centro colonial español que se ha conservado intacto por mucho tiempo, con palacios decorados del siglo XVI y XVII y sitios religiosos, como la ornamentada Iglesia de la Compañía de Jesús.</p>
+
+						
+					</div>
+					<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+						<p>El cantón Riobamba es una entidad territorial subnacional ecuatoriana, de la Provincia de Chimborazo. Su cabecera cantonal es la ciudad de Riobamba, lugar donde se agrupa la mayor parte de su población total. </p>
+						
+					</div>
+					<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+						<p>El aprendizaje automático o aprendizaje automatizado o aprendizaje de máquinas es el subcampo de las ciencias de la computación y una rama de la inteligencia artificial, cuyo objetivo es desarrollar técnicas que permitan que las computadoras aprendan.</p>
+
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+{% endblock Contenido %}

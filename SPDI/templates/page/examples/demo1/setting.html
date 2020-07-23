@@ -1,0 +1,214 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}SPINGE | Data{% endblock titulo%}
+{% block titulo_2 %}Configuración {% endblock titulo_2 %}
+{% block subtitulo %} Perfil {% endblock subtitulo %}
+{% block descripcion %} Usuario {% endblock descripcion %}
+
+{% block Contenido %}
+<style>
+	.profile-pic{
+		max-width: 200px;
+		max-height:200px;
+		margin: 0 auto;
+		border-radius: 50%;
+	}
+</style>
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<a class="btn btn-info" href="{% url 'home' %}">
+                <i class="fas fa-angle-double-left"></i>  Regrasar a Inicio</a>
+			<hr>
+			<h3 style="text-align: center">Perfil de Usuario</h3>
+            <hr>
+            <a href="{{request.user.setting.image.url}}" target="_blank" class="profile-pic" >
+                <img class="profile-pic"  src="{{request.user.setting.image.url}}">
+            </a>
+            <br>
+            <h4 style="text-align: center">{{request.user.setting.name}}</h4>
+            <h5 style="text-align: center">{{request.user}}</h>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card card-body">
+            <div class="login">
+                <form method="POST" action="" enctype="multipart/form-data" >
+                    <h1 class="title" style="text-align: center;">Cofiguración</h1>
+                    {% csrf_token %}
+                   <label for="">Nombres:</label>
+                    {{form.name}}
+                    <i class="fa fa-user-check"></i>
+
+                    <label for="">Numero de Celular</label>
+                    {{form.phone}}
+                    <i class="fa fa-phone"></i>
+
+                    <label for="">Ingrese una descripción</label>
+                    {{form.description}}
+                    <i class="fa fa-angle-right"></i>
+                    <div class="imagen">
+                    <label for="">Ingrese una descripción</label>
+                    {{form.image}}
+                    <i class="fa fa-id-badge"></i>
+                    </div>
+                
+                    
+                    <input class="btn btn-primary" type="submit" value="Actualizar la configuración del perfil" name="Update Information">
+                </form>
+            </div>
+
+
+		</div>
+	</div>
+</div>
+
+
+<style>
+ .login {
+    border-radius: 2px 2px 5px 5px;
+    padding: 10px 20px 20px 20px;
+    width: 90%;
+    max-width: 900px;
+    background: #ffffff;
+    position: relative;
+    padding-bottom: 80px;
+    
+  }
+  .login.loading button {
+    max-height: 100%;
+    padding-top: 50px;
+  }
+  .login.loading button .spinner {
+    opacity: 1;
+    top: 40%;
+  }
+  .login.ok button {
+    background-color: #8bc34a;
+  }
+  .login.ok button .spinner {
+    border-radius: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    height: 20px;
+    animation: none;
+    transform: rotateZ(-45deg);
+  }
+  .login input {
+    display: block;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    transition: border-width 0.2s ease;
+    border-radius: 2px;
+    color: #ccc;
+  }
+  .login input + i.fa {
+    color: #fff;
+    font-size: 1em;
+    position: absolute;
+    margin-top: -47px;
+    opacity: 0;
+    left: 0;
+    transition: all 0.1s ease-in;
+  }
+  .login input:focus {
+    outline: none;
+    color: rgb(56, 53, 53);
+    border-color: #1269DB;
+    border-left-width: 35px;
+  }
+  .login input:focus + i.fa {
+    opacity: 1;
+    left: 30px;
+    transition: all 0.25s ease-out;
+  }
+  .login a {
+    font-size: 0.8em;
+    color: #1269DB;
+    text-decoration: none;
+  }
+  .login .title {
+    color: rgb(54, 54, 54);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0 30px 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+  .login button {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    background: #1269DB;
+    color: #fff;
+    display: block;
+    border: none;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-height: 60px;
+    border: 0px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 2px 2px;
+    transform: rotateZ(0deg);
+    transition: all 0.1s ease-out;
+    border-bottom-width: 7px;
+  }
+  .login textarea{
+    width: 100%;
+    height: 50%;
+    
+    
+  }
+  .login textarea:focus {
+    outline: none;
+    color: rgb(56, 53, 53);
+    border-color: #1269DB;
+    border-left-width: 35px;
+  }
+  .login textarea + i.fa {
+    color: #fff;
+    font-size: 1em;
+    position: absolute;
+    margin-top: -110px;
+    opacity: 0;
+    left: 0;
+    transition: all 0.1s ease-in;
+  }
+  .login textarea:focus + i.fa {
+    opacity: 1;
+    left: 30px;
+    transition: all 0.25s ease-out;
+  }
+
+  .login button .spinner {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: 4px solid #ffffff;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+    left: 50%;
+    top: 0;
+    opacity: 0;
+    margin-left: -20px;
+    margin-top: -20px;
+    animation: spinner 0.6s infinite linear;
+    transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease, border-radius 0.3s ease;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+  }
+  .login:not(.loading) button:hover {
+    box-shadow: 0px 1px 3px #1269DB;
+  }
+  .login:not(.loading) button:focus {
+    border-bottom-width: 4px;
+  }
+
+</style>
+
+{% endblock Contenido %}

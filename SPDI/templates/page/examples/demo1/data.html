@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}SPINGE | Data{% endblock titulo%}
+{% block titulo_2 %}Datos{% endblock titulo_2 %}
+{% block subtitulo %} Información {% endblock subtitulo %}
+{% block descripcion %} Basica {% endblock descripcion %}
+
+{% block Contenido %}
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<div class="card-title">Datos</div>
+				Este apartado se cargan diferentes tipos datos para su posterior analisis...
+			</div>
+			<div class="card-body">
+				
+				<div class="row">
+				   
+
+					<div class="col-md-6 col-lg-4">
+						<div class="form-check">
+							<label>Tipo de datos</label><br/>
+							<label class="form-radio-label">
+								<input class="form-radio-input" type="radio" name="optionsRadios" value=""  checked="">
+								<span class="form-radio-sign">Excel</span>
+							</label>
+							<label class="form-radio-label ml-3">
+								<input class="form-radio-input" type="radio" name="optionsRadios" value="">
+								<span class="form-radio-sign">Sql</span>
+						</div>
+
+						
+						<div class="form-group">
+							<label for="exampleFormControlFile1">Seleccionar datos</label>
+							<input type="file" class="form-control-file" id="exampleFormControlFile1">
+						</div>
+						<div class="form-group">
+							<label for="comment">Comentario</label>
+							<textarea class="form-control" id="comment" rows="5" placeholder="Agree su comentario...">
+
+							</textarea>
+						</div>
+						
+					</div>
+					<div class="col-md-6 col-lg-4" >	
+						<div class="borde" style="border-color: black">
+								
+						</div>
+					</div>    
+				</div>  
+
+				<div class="card-action float-right">
+					<button class="btn btn-danger">Cancel</button>
+					
+					<button class="btn btn-primary">
+						<i class="fas fa-save"></i>
+						Guardar
+					</button>
+					
+				</div>  
+
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock Contenido %}

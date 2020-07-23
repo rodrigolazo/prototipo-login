@@ -1,0 +1,42 @@
+{% extends 'login.html' %}
+
+{% block titulo %}SPINGE | Registro{% endblock titulo%}
+{% block titulo_2%}
+<a class="nav-link" href="{% url 'login' %}" style="font-size: 15px; color: white;">
+    Login
+</a>
+{% endblock titulo_2 %}
+
+
+{% block Contenido %}
+
+<form method="POST" class="login" >
+    {% csrf_token %}
+  <p class="title" style="text-align: center;">Regístrate</p>
+  
+  {{form.username}}
+  <i class="fa fa-user"></i>
+  {{form.email}}
+  <i class="fa fa-envelope"></i>
+  {{form.password1}}
+  <i class="fa fa-key"></i>
+  {{form.password2}}
+  <i class="fa fa-key"></i>
+  
+  <button type="submit">
+    <i class="spinner"></i>
+    <span class="state">Registrarse</span>
+  </button>
+
+</form>
+<footer><a href="{% url 'login' %}" style="color: rgb(45, 97, 175); height: 25px;">Login</a></footer>
+</p>
+
+
+<style>
+    .login{
+			
+			margin-top: 5%;
+		}
+</style>
+{% endblock Contenido %}
